@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI trophy guide and tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <h1>Leonida Legend</h1>
+  <p class="tagline">An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5.</p>
+  <div class="progress-summary" id="progress-summary">
+    <div class="progress-bar" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+    <p id="progress-text">0 of 55 earned · 0% toward platinum</p>
+    <p id="progress-grades" class="progress-grades"></p>
+  </div>
+</header>
+
+<nav class="view-tabs" aria-label="Views">
+  <button type="button" class="tab active" data-view="checklist">Checklist</button>
+  <button type="button" class="tab" data-view="roadmap">Roadmap to platinum</button>
+</nav>
+
+<section class="controls" aria-label="Filters">
+  <label class="control">Search
+    <input id="filter-search" type="search" placeholder="Name, description or guide…" autocomplete="off">
+  </label>
+  <label class="control">Kind
+    <select id="filter-kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="missable">Missable</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="activities">Activities</option>
+      <option value="online">Online</option>
+    </select>
+  </label>
+  <label class="control">Grade
+    <select id="filter-grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="control">Status
+    <select id="filter-status">
+      <option value="all">Earned and missing</option>
+      <option value="earned">Earned only</option>
+      <option value="missing">Missing only</option>
+    </select>
+  </label>
+  <label class="control toggle">
+    <input id="spoiler-toggle" type="checkbox" checked>
+    Hide story spoilers until earned
+  </label>
+  <div class="control buttons">
+    <button id="export-progress" type="button">Export progress</button>
+    <label class="import-button">Import progress
+      <input id="import-progress" type="file" accept="application/json,.json">
+    </label>
+    <button id="reset-progress" type="button">Reset</button>
+  </div>
+  <p id="visible-count" class="visible-count" role="status"></p>
+</section>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div id="trophy-list" class="trophy-list"></div>
+    <p id="empty-message" class="empty-message" hidden>No trophies match the current filters.</p>
+  </section>
+  <section id="view-roadmap" class="view" hidden>
+    <div id="roadmap-list" class="roadmap-list"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>Guides are written for this entry from the official trophy descriptions. Official names, descriptions and grades as listed by Exophase and PSNProfiles; each trophy's guide names its sources. Progress is stored only in your browser (localStorage) and never leaves this device.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
